@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Music by Sun</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Syne:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <div class="bg-mesh"></div>
+  <div class="bg-radial" id="bg-radial"></div>
+
+  <header>
+    <div class="brand">
+      <span class="brand-glyph">♪</span>
+      <div>
+        <h1 class="site-title">Music by Sun</h1>
+        <p class="site-sub">Virtual Studio · Web Audio Engine</p>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- TOP CONTROLS -->
+    <div class="top-bar">
+
+      <div class="ctrl-group">
+        <span class="ctrl-lbl">Instrument</span>
+        <div class="pill-row">
+          <button class="pill active" data-inst="guitar">🎸 Guitar</button>
+          <button class="pill" data-inst="harmonium">🎹 Harmonium</button>
+        </div>
+      </div>
+
+      <div class="ctrl-group">
+        <span class="ctrl-lbl">Music Style</span>
+        <div class="pill-row">
+          <button class="pill active" data-style="natural">Natural</button>
+          <button class="pill" data-style="jazz">Jazz</button>
+          <button class="pill" data-style="classical">Classical</button>
+          <button class="pill" data-style="lofi">Lo-fi</button>
+        </div>
+      </div>
+
+      <div class="ctrl-group">
+        <span class="ctrl-lbl">Octave</span>
+        <div class="stepper">
+          <button class="step-btn" id="oct-dn">−</button>
+          <span class="step-num" id="oct-num">4</span>
+          <button class="step-btn" id="oct-up">+</button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- KEYS PANEL -->
+    <div class="keys-panel">
+      <div class="keys-panel-hdr">
+        <span class="inst-label" id="inst-label">Guitar</span>
+        <span class="keys-hint">Click or press keyboard keys</span>
+      </div>
+      <div class="keys-row" id="keys-container"></div>
+    </div>
+
+    <!-- MATH PATTERNS / CHORDS -->
+    <div class="chords-section">
+      <div class="sec-hdr">
+        <span class="sec-icon">∑</span>
+        <span class="sec-title">Math-Based Patterns</span>
+        <span class="sec-sub">Sequences derived from mathematical ratios</span>
+      </div>
+      <div class="chord-grid" id="chord-grid"></div>
+    </div>
+
+    <!-- CONTROLS / KNOBS -->
+    <div class="knobs-panel">
+      <div class="knob-item">
+        <label class="knob-lbl">Volume</label>
+        <input type="range" class="slider" id="vol" min="0" max="100" value="80"/>
+        <span class="knob-num" id="vol-num">80</span>
+      </div>
+      <div class="knob-item">
+        <label class="knob-lbl">Reverb</label>
+        <input type="range" class="slider accent" id="rev" min="0" max="100" value="15"/>
+        <span class="knob-num" id="rev-num">15</span>
+        <span class="knob-tag" id="rev-tag">Dry</span>
+      </div>
+      <div class="knob-item">
+        <label class="knob-lbl">Decay</label>
+        <input type="range" class="slider" id="dec" min="10" max="100" value="50"/>
+        <span class="knob-num" id="dec-num">50</span>
+      </div>
+      <div class="knob-item">
+        <label class="knob-lbl">Tone</label>
+        <input type="range" class="slider" id="tone" min="0" max="100" value="65"/>
+        <span class="knob-num" id="tone-num">65</span>
+      </div>
+      <div class="knob-item">
+        <label class="knob-lbl">Reverb&nbsp;<kbd class="inline-kbd">R</kbd></label>
+        <button class="toggle-btn" id="rev-toggle">OFF</button>
+      </div>
+    </div>
+
+    <!-- VISUALIZER + NOTE -->
+    <div class="viz-row">
+      <div class="note-badge">
+        <div class="note-big" id="note-big">—</div>
+        <div class="note-small">Now Playing</div>
+      </div>
+      <div class="viz-wrap">
+        <canvas id="viz"></canvas>
+      </div>
+    </div>
+
+    <!-- KBD HINT -->
+    <div class="kbd-row">
+      <kbd>A</kbd><kbd>S</kbd><kbd>D</kbd><kbd>F</kbd><kbd>G</kbd><kbd>H</kbd><kbd>J</kbd><kbd>K</kbd>
+      <span class="hint-arrow">→</span>
+      <span class="hint-notes">C · D · E · F · G · A · B · C5</span>
+      <span class="hint-sep">|</span>
+      <kbd>R</kbd> <span class="hint-notes">Reverb on/off</span>
+    </div>
+
+  </main>
+
+  <footer>Music by Sun &copy; 2026 &nbsp;·&nbsp; Pure HTML &amp; CSS &amp; JS · Web Audio API</footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
